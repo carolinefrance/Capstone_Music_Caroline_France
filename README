@@ -28,4 +28,4 @@ Because the web app fetches a local JSON file, it must be run on a local server 
 1. Open your terminal and navigate to this project folder.
 2. Run the following command in the Terminal to start a local Python server:
    `python -m http.server 8000`
-3. Open your web browser and navigate to `http://localhost:8000`.
+3. Open your web browser and navigate to `http://localhost:8000/Capstone_Music_Caroline_France/`.
