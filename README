@@ -1,0 +1,31 @@
+# The Rolling Stones: Sonic Matchmaker & Catalog Analysis
+
+## Overview
+This Capstone project analyzes a dataset of over 1,600 Rolling Stones tracks from Spotify to solve a common user experience problem: **Choice Overload**. By applying unsupervised machine learning (K-Means Clustering and PCA), this project segments the band's massive 60-year catalog into distinct "Sonic Cohorts." 
+
+The analysis culminates in two primary business deliverables:
+1. **Macro-Level Curation:** A data-driven recommendation of the top 2 overall albums to promote to general listeners based on historical engagement metrics.
+2. **Micro-Level Curation:** A custom-built, content-based recommendation engine (deployed as a web application) that enables users to input a seed track and mathematically discover the closest sonic matches in the catalog using Cosine Similarity.
+
+## Project Structure
+* **`rolling_stones_spotify.csv`**: The raw dataset contains track metadata and audio features (Danceability, Energy, Acousticness, etc.).
+* **`Capstone_Music_Caroline_France.ipynb`**: The core data science pipeline. Includes Data Cleaning, Exploratory Data Analysis (EDA), Feature Engineering, Dimensionality Reduction, and Cluster Analysis.
+* **`stones_catalog.json`**: The refined, scaled, and clustered dataset exported for frontend use.
+* **`index.html` & `app.js`**: A lightweight, interactive web interface that brings the recommendation engine to life in the browser.
+
+## Technologies Used
+* **Data Science:** Python, Pandas, Scikit-Learn (K-Means, PCA, StandardScaler), NumPy.
+* **Data Visualization:** Matplotlib, Seaborn.
+* **Frontend Web App:** HTML5, CSS3, Vanilla JavaScript (implementing custom Levenshtein Distance and Cosine Similarity algorithms).
+
+## Key Insights
+* **The "Studio Premium":** Live tracks severely underperform compared to studio recordings, driving the decision to filter crowd noise out of the recommendation algorithm.
+* **The Remaster Bias:** Modern streaming audiences heavily favor modern remasters over original master tapes. 
+* **The Two-Sided Coin:** Silhouette Scores and the Elbow Method show that the catalog is best split into `k=2` cohorts, reflecting the band's dual nature: High-Voltage Rock Anthems vs. Acoustic/Blues Roots.
+
+## How to Run the Web App Locally
+Because the web app fetches a local JSON file, it must be run on a local server to bypass browser security restrictions.
+1. Open your terminal and navigate to this project folder.
+2. Run the following command in the Terminal to start a local Python server:
+   `python -m http.server 8000`
+3. Open your web browser and navigate to `http://localhost:8000`.
